@@ -30,7 +30,7 @@ public class MyArrayList<T> {
 
     public void remove(int index){
 
-        if(index >= this.index && index > 0) {
+        if(index > 0 && index >= this.index) {
             System.out.println("this element is not exist");
             return;
         }

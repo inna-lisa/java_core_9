@@ -41,9 +41,9 @@ public class MyLinkedList<T> {
 	}
 
 	public void remove(int index){
-		if(index < size && index >= 0) {
+		if(index >= 0 && index < size ) {
 			if(index == 0) {
-				first.previous = null;
+				//first.previous = null;
 				first = first.next;
 			}
 			if(index == size - 1) {
@@ -63,7 +63,7 @@ public class MyLinkedList<T> {
 	}
 
 	public MyNode<T> get(int index) {
-		if(index < size && index >= 0) {
+		if(index >= 0 && index < size) {
 			int count = 0;
 			MyNode<T> temp = first;
 
@@ -92,13 +92,12 @@ public class MyLinkedList<T> {
 			tempNode = first;
 			first = null;
 			first = tempNode.next;
-			size--;
 		}
 		if(size == 1){
 			first = null;
 			last = null;
-			size--;
 		}
+		size = 0;
 	}
 
 	public int getSize() {

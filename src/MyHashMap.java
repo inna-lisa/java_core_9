@@ -6,7 +6,7 @@ public class MyHashMap<K,V> {
 	private int threshold;
 	private float loadFactor;
 
-	static final int INITIAL_CAPACITI = 8;
+	static final int INITIAL_CAPACITI = 16;
 	static final float LOAD_FACTOR = 0.75f;
 	static final int MAXIMUM_THRESHOLD = 8;
 
@@ -25,7 +25,6 @@ public class MyHashMap<K,V> {
 			this.key = key;
 			this.value = value;
 			this.next = next;
-
 		}
 	}
 
@@ -170,9 +169,9 @@ public class MyHashMap<K,V> {
 				int sizeBacket = countNodesInOneBacket(table[i]);
 
 				if(sizeBacket == 1){
-						table[i] = null;
-						size--;
-						loadFactor--;
+					table[i] = null;
+					size--;
+					loadFactor--;
 				}
 				else {
 					for (int j = 1; j <= sizeBacket; j++) {
